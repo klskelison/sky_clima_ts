@@ -1,75 +1,49 @@
-# React + TypeScript + Vite
+# 🌤️ Weather App (Aplicativo de Clima)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um aplicativo moderno e responsivo para consulta meteorológica em tempo real, desenvolvido para consolidar conceitos avançados de componentização, consumo de APIs e tipagem estática no ecossistema do React.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Tecnologias Utilizadas
 
-## React Compiler
+- **React** (com Vite para uma inicialização e build ultra-rápidos)
+- **TypeScript** (garantindo tipagem estática, interfaces seguras e prevenção de bugs em tempo de desenvolvimento)
+- **Tailwind CSS** (estilização moderna utilizando o conceito de Utility-First e efeito Glassmorphism)
+- **OpenWeatherMap API** (integração assíncrona para consumo de dados meteorológicos globais)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Funcionalidades Implementadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🔍 **Busca Avançada:** Consulta de dados climáticos em tempo real digitando o nome de qualquer cidade.
+- ⌨️ **UX Aprimorada:** Disparo de busca integrado tanto pelo clique no botão quanto pelo pressionamento da tecla **Enter**.
+- ⚙️ **TypeScript Strict:** Uso de interfaces (`interface WeatherData`) para tipagem segura dos estados e respostas da API, além de tipagem correta de retornos assíncronos (`Promise<void>`) e eventos de formulário/teclado.
+- 🎨 **Layout Dinâmico:** Os ícones e descrições do clima se alteram dinamicamente (em português) de acordo com a resposta da API.
+- 🔐 **Segurança da Informação:** Chaves de API protegidas localmente utilizando variáveis de ambiente (`.env.local`) no padrão do Vite.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🏁 Como Executar o Projeto Localmente
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Se você deseja rodar este projeto na sua máquina, siga os passos abaixo:
 
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/sky_clima_ts
+   ```
+2. Entre na pasta do projeto:
+   ```bash
+   cd sky_clima_ts
+   ```
+3. Instale as dependências:
+   ```bash
+   npm install
+   ```
+4. Crie um arquivo `.env.local` na raiz do projeto e adicione a sua chave da OpenWeather:
+   ```env
+   VITE_WEATHER_API_KEY=sua_chave_aqui
+   ```
+5. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
